@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Bike Drive Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #21233f; }
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #ffd700;
+            font-size: 24px;
+            z-index: 100;
+            text-shadow: 2px 2px 8px #333;
+        }
+        #instructions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 21px;
+            text-align: center;
+            z-index: 100;
+            background: rgba(44,44,88,0.87);
+            padding: 32px;
+            border-radius: 11px;
+            box-shadow: 2px 2px 12px #0009;
+        }
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 29px;
+            text-align: center;
+            z-index: 100;
+            background: rgba(55,0,0,0.8);
+            padding: 44px;
+            border-radius: 12px;
+            box-shadow: 0 0 30px #a00000;
+            display: none;
+        }
+        button {
+            margin-top: 22px;
+            padding: 12px 32px;
+            font-size: 19px;
+            cursor: pointer;
+            background: #18c741;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+        }
+        button:hover { background: #147825; }
+    </style>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="instructions">
+        <h2>🏍️ 3D Bike Drive!</h2>
+        <p>Arrow Keys or WASD to steer</p>
+        <p>Avoid obstacles, grab power-ups!</p>
+        <button onclick="startBikeGame()">Start Bike Game</button>
+    </div>
+    <div id="gameOver">
+        <h2>Game Over!</h2>
+        <p id="bikeFinalScore"></p>
+        <button onclick="location.reload()">Try Again</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="bike.js"></script>
+</body>
+</html>
