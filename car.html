@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Car Racer Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #111; }
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            z-index: 100;
+        }
+        #instructions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            padding: 40px;
+            border-radius: 10px;
+            display: none;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #0074D9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover { background: #001F3F; }
+    </style>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="instructions">
+        <h2>🚗 3D Car Racing</h2>
+        <p>Arrow Keys or WASD to steer</p>
+        <p>Avoid obstacles on the road!</p>
+        <button onclick="startCarGame()">Start Car Game</button>
+    </div>
+    <div id="gameOver">
+        <h2>Game Over!</h2>
+        <p id="carFinalScore"></p>
+        <button onclick="location.reload()">Try Again</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="car.js"></script>
+</body>
+</html>
